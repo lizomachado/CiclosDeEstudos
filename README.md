@@ -1,4 +1,4 @@
-# Ciclo de Estudos
+# Ciclos de Estudos
 
 Aplicativo desktop desenvolvido em Java para organizar um ciclo de estudos de forma prática. As disciplinas são organizadas em uma fila rotativa, permitindo manter uma rotina equilibrada sem a necessidade de reorganizar a lista manualmente após cada sessão.
 
