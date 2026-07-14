@@ -1,69 +1,92 @@
-# Ciclos de Estudos
+# 📚 Meus Ciclos de Estudos
 
-Aplicativo desktop desenvolvido em Java para organizar um ciclo de estudos de forma prática. As disciplinas são organizadas em uma fila rotativa, permitindo manter uma rotina equilibrada sem a necessidade de reorganizar a lista manualmente após cada sessão.
+Aplicação desktop desenvolvida em Java para auxiliar na organização dos estudos utilizando o método de ciclos. O projeto surgiu da necessidade de organizar diferentes assuntos de forma simples, mantendo o foco no estudo sem precisar reorganizar listas ou cronogramas manualmente.
 
 ## Funcionalidades
 
-- Organização das disciplinas em fila rotativa.
-- Ao concluir uma matéria, ela é movida automaticamente para o final da lista.
-- Destaque visual para a última disciplina estudada.
-- Campo de anotações individual para cada disciplina.
-- Salvamento automático das disciplinas e das observações.
-- Interface gráfica desenvolvida com Java Swing.
+- Gerenciamento de múltiplos ciclos de estudos.
+- Fila rotativa para reorganização automática das disciplinas.
+- Anotações individuais para cada matéria.
+- Salvamento automático das alterações.
+- Histórico de edição (`Ctrl + Z`) nas anotações.
+- Controle de zoom para aumentar ou reduzir o tamanho da fonte.
+- Alternância entre tema claro e escuro.
+- Exportação das anotações para arquivo `.txt`.
+- Armazenamento dos dados em uma pasta dedicada do usuário.
 
-## Estrutura dos arquivos
+## Armazenamento dos dados
 
-O programa utiliza os seguintes arquivos para armazenar os dados:
+Os dados são armazenados em uma pasta oculta no diretório do usuário, evitando que sejam perdidos caso a pasta do projeto seja movida ou excluída.
+
+### Localização
+
+**Windows**
 
 ```
-disciplinas.txt
-observacoes/
+C:\Users\SeuUsuario\.ciclos_estudos\
 ```
 
-- `disciplinas.txt`: armazena a lista de disciplinas.
-- `observacoes/`: contém um arquivo de anotações para cada disciplina.
+**Linux**
 
-Todos os dados são preservados entre as execuções do aplicativo.
+```
+/home/seuusuario/.ciclos_estudos/
+```
+
+**macOS**
+
+```
+/Users/seuusuario/.ciclos_estudos/
+```
+
+### Arquivos gerados
+
+```
+ciclo_[NomeDoCiclo].txt
+obs_[NomeDoCiclo]_[Letra]_[Materia].txt
+```
+
+- `ciclo_...`: informações do ciclo e ordem das disciplinas.
+- `obs_...`: anotações de cada disciplina.
 
 ## Requisitos
 
-- Java 17 ou superior (JRE ou JDK).
+- Java 17 ou superior.
 
-Para verificar a versão instalada:
+Verifique a versão instalada:
 
 ```bash
 java -version
 ```
 
-## Executando o aplicativo
+## Executando
 
 ### Windows
 
-Basta executar o arquivo:
+Execute o arquivo:
 
 ```
-Ciclo de Estudos.jar
+Ciclos de Estudos.jar
 ```
 
-Caso o sistema solicite um programa para abrir o arquivo, selecione o Java.
+Caso seja solicitado um programa, selecione o Java.
 
 ### macOS
 
-Também é possível executar o arquivo `.jar` com um duplo clique, desde que o Java esteja instalado. Se necessário, utilize o Terminal:
+Também é possível executar pelo Terminal:
 
 ```bash
-java -jar "Ciclo de Estudos.jar"
+java -jar "Ciclos de Estudos.jar"
 ```
 
 ### Linux
 
-Em algumas distribuições Linux, arquivos `.jar` são associados ao gerenciador de arquivos compactados. Se isso acontecer, execute o aplicativo pelo Terminal:
+Caso o sistema tente abrir o `.jar` como arquivo compactado:
 
 ```bash
-java -jar "Ciclo de Estudos.jar"
+java -jar "Ciclos de Estudos.jar"
 ```
 
-Caso queira que o duplo clique funcione normalmente, crie uma associação para arquivos `.jar`:
+Para associar arquivos `.jar` ao Java:
 
 ```bash
 cat <<EOF > ~/.local/share/applications/java.desktop
@@ -76,28 +99,25 @@ MimeType=application/x-java-archive;application/java-archive;application/x-jar;
 EOF
 ```
 
-Depois atualize o banco de aplicações:
+Atualize o banco de aplicações:
 
 ```bash
 update-desktop-database ~/.local/share/applications/
 ```
 
-Em seguida:
-
-1. Clique com o botão direito no arquivo `.jar`.
-2. Selecione **Propriedades** → **Abrir com**.
-3. Escolha **Abrir com Java**.
-4. Marque a opção para utilizar esse programa como padrão.
+Depois, escolha **Abrir com Java** nas propriedades do arquivo e defina como aplicativo padrão.
 
 ## Tecnologias
 
-- Java
+- Java 17
 - Java Swing
+- java.io
+- JFileChooser
 
-## Persistência dos dados
+## Objetivo
 
-As alterações são gravadas automaticamente durante o uso do aplicativo. Não é necessário salvar manualmente antes de fechar a janela.
+Este projeto foi desenvolvido para uso pessoal, com o objetivo de facilitar a organização dos meus estudos e, ao mesmo tempo, praticar conceitos de desenvolvimento desktop em Java, como interfaces gráficas, manipulação de arquivos e organização de aplicações.
 
 ## Licença
 
-Este projeto é disponibilizado para uso pessoal e acadêmico.
+Projeto disponibilizado para fins de estudo e uso pessoal.
